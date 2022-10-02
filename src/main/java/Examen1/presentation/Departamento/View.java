@@ -27,10 +27,10 @@ public class View implements java.util.Observer {
         guardarboton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Departamento d = new Departamento();
-                d=take();
+                Departamento d = take();
                 try{
                     controller.guardar(d);
+                    controller.hide();
                 } catch (Exception e1) {
                     JOptionPane.showMessageDialog(null, e1.getMessage());
                 }
@@ -62,10 +62,10 @@ public class View implements java.util.Observer {
     public void update(java.util.Observable updatedModel,Object parametros){
         Departamento current = model.getCurrent();
         codtxtfld.setEnabled(model.getModo() == Application.MODO_AGREGAR);
-        //codtxtfld.setText(current.getCodigo());
-        //nombretxt.setText(current.getNombre());
-        //auditadocheckbox.setSelected(current.isAuditado());
-        //presupuestotxt.setText(String.valueOf(current.getPresupuesto()));
+        codtxtfld.setText(current.getCodigo());
+        nombretxt.setText(current.getNombre());
+        auditadocheckbox.setSelected(current.isAuditado());
+        presupuestotxt.setText(String.valueOf(current.getPresupuesto()));
     }
 
     public Departamento take() {

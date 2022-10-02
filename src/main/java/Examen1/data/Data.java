@@ -12,15 +12,8 @@ public class Data {
 
     private List<Examen1.logic.Departamento> departamento;
 
-    public Data(List<Examen1.logic.Departamento> departamento) {
-        this.departamento = departamento;
-    }
-
     public Data() {
-        this.departamento = departamento;
-
-        departamento= new ArrayList<>();
-        departamento.add(new Examen1.logic.Departamento("Mauricio", "123", true, 100000, null));
+        departamento = new ArrayList<>();
     }
 
     public List<Examen1.logic.Departamento> getDepartamento() {

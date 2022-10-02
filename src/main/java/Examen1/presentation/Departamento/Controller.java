@@ -12,6 +12,7 @@ public class Controller {
     Model model;
 
     public Controller(View view, Model model) {
+        model.setCurrent(new Departamento());
         this.view = view;
         this.model = model;
         view.setController(this);
@@ -27,8 +28,8 @@ public class Controller {
 
     JDialog dialog;
     public void show(){
-        dialog = new JDialog(Application.ventanaPrincipal,"Sucursal", true);
-        dialog.setSize(900,650);
+        dialog = new JDialog(Application.ventanaPrincipal,"Departamento", true);
+        dialog.setSize(600,650);
         dialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         dialog.setContentPane(view.getPanel());
         Point location = Application.ventanaPrincipal.getLocation();
@@ -51,6 +52,7 @@ public class Controller {
                 model.setCurrent(e);
                 break;
         }
+        Application.departamentosController.buscar("");
         model.commit();
     }
 
@@ -59,5 +61,10 @@ public class Controller {
         model.setCurrent(e);
         model.commit();
         this.show();
+    }
+
+    public void eliminar(Departamento e) throws Exception {
+        Examen1.logic.Service.instance().Depadel(e);
+        model.commit();
     }
 }

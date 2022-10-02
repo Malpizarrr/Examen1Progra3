@@ -19,6 +19,8 @@ public class Application {
     public static Examen1.presentation.Departamentos.Controller departamentosController;
     public static JFrame ventanaPrincipal;
 
+    public static Examen1.presentation.DepartamentoSegunda.Controller depasegundaController;
+
 
     public static  final int  MODO_AGREGAR=0;
     public static final int MODO_EDITAR=1;
@@ -32,7 +34,7 @@ public class Application {
         Examen1.presentation.Departamentos.view viewD = new Examen1.presentation.Departamentos.view();
         departamentosController = new Controller(viewD, modeld);
 
-
+        depasegundaController = new Examen1.presentation.DepartamentoSegunda.Controller(new Examen1.presentation.DepartamentoSegunda.view(), new Examen1.presentation.DepartamentoSegunda.Model());
 
         Examen1.presentation.main.Model model = new Examen1.presentation.main.Model();
         Examen1.presentation.main.View view = new Examen1.presentation.main.View();
@@ -44,6 +46,8 @@ public class Application {
 
         mainController = new Examen1.presentation.main.Controller(model, view);
         view.getPanel().add("Departamentos",viewD.getPanel());
+
+
 
         ventanaPrincipal = new JFrame();
         ventanaPrincipal.setSize(600, 600);

@@ -1,4 +1,4 @@
-package Examen1.presentation.Departamentos;
+package Examen1.presentation.DepartamentoSegunda;
 
 
 import javax.swing.*;
@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -17,6 +16,8 @@ public class view implements Observer {
     private JTable table1;
     private JPanel panelprincipal;
     private JPanel panel1;
+    private JButton editarbtn;
+    private JButton mant;
 
     Controller controller;
 
@@ -29,21 +30,11 @@ public class view implements Observer {
                 controller.preAgregar();
             }
         });
-        Raizbtn.addActionListener(new ActionListener() {
+        editarbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int row = table1.getSelectedRow();
                 controller.editar(row);
-                controller.ensenarr(row);
-            }
-        });
-        table1.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                if(e.getClickCount()==2){
-                    JOptionPane.showMessageDialog(null,"No se pudo implementar, pero si el darle click a Raiz, editar y agregar, ademas de XML funcionando");
-                }
             }
         });
     }

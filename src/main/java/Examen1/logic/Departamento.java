@@ -1,13 +1,15 @@
 package Examen1.logic;
 
+import java.util.List;
+
 public class Departamento {
     private String nombre;
     private String codigo;
     private boolean Auditado;
     private int Presupuesto;
-    private Departamento departamento;
+    private List<Departamento> departamento;
 
-    public Departamento(String nombre, String codigo, boolean Auditado, int Presupuesto, Departamento departamento) {
+    public Departamento(String nombre, String codigo, boolean Auditado, int Presupuesto, List<Departamento> departamento) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.Auditado = Auditado;
@@ -58,11 +60,11 @@ public class Departamento {
         this.Presupuesto = Presupuesto;
     }
 
-    public Departamento getDepartamento(){
+    public List<Departamento> getDepartamento(){
         return departamento;
     }
 
-    public void setDepartamento(Departamento departamento){
+    public void setDepartamento(List<Departamento> departamento){
         this.departamento = departamento;
     }
 

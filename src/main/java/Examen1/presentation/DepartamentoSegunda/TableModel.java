@@ -1,4 +1,4 @@
-package Examen1.presentation.Departamentos;
+package Examen1.presentation.DepartamentoSegunda;
 
 import Examen1.logic.Departamento;
 
